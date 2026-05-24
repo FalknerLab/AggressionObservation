@@ -21,7 +21,7 @@ import pickle
 import cv2
 from scipy.signal import savgol_filter
 
-def fill_missing(Y, kind='cubic'):
+def fill_missing(Y, kind='linear'):
 	
 	initial_shape = Y.shape
 	Y = Y.reshape((initial_shape[0], -1))
@@ -51,7 +51,7 @@ def fill_missing(Y, kind='cubic'):
 def filter_XY(df):
 	filtered_df = df.copy()
 	for column in df.columns:
-		filtered_df[column] = savgol_filter(df[column], window_length=21, polyorder=3)
+		filtered_df[column] = savgol_filter(df[column], window_length=13, polyorder=3)
 	return filtered_df
 
 def calculate_iou(box_1, box_2, mode = 'mouse'):
