@@ -14,7 +14,7 @@ All notebooks load from a common multi-session data file:
 multifiber_data_reviews.pickle
 ```
 
-This contains fiber photometry traces from 23 neural populations (excitatory and inhibitory) across ~12 brain regions (PrL, vLS, POA, BNST, AH, MeA, VMH, PAG, PMv, LHb, PA, NAc), recorded simultaneously in resident aggressors, social observers, and non-social controls during resident-intruder assays. Processed data files are available at: **[INSERT DATA REPO LINK]**
+This contains fiber photometry traces from 23 neural populations (excitatory and inhibitory) across ~12 brain regions (PrL, vLS, POA, BNST, AH, MeA, VMH, PAG, PMv, LHb, PA, NAc), recorded simultaneously in resident aggressors, social observers, and non-social controls during resident-intruder assays. 
 
 ---
 
