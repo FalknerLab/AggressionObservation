@@ -1,4 +1,4 @@
-# AggressionObservation — Behavior Classification
+# AggressionObservation — Social Behavior Classification
 
 This folder contains the full pipeline for extracting kinematic and social features from SLEAP pose estimates and classifying aggressive and investigative behaviors in resident-intruder mouse assays.
 

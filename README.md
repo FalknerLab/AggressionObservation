@@ -13,13 +13,17 @@ This repository contains the full analysis pipeline supporting the figures in th
 
 ```
 AggressionObservation/
-├── behavior_classification/     # Pose-based feature extraction and behavior segmentation
+├── social_behavior_classification/     # Pose-based feature extraction and behavior segmentation
 │   ├── behavior_feature_extraction.py
 │   ├── behavior_feature_post-processing.py
 │   ├── unsupervised_classifier.py
 │   └── supervised_classifier.ipynb
 │
-└── figures/                     # Statistical analyses and figure generation
+└── observer_pose_classification/       # Frame-wise classification of observer postural dynamics
+    ├── observer_analysis_notebooks     # Figure reproduction related to observer behavior
+    └── attn_beh_classifier             # Full model pipeline
+│
+└── figures/                            # Statistical analyses and figure generation
     ├── unsupervised_supervised_behavior_analysis__figure1_.ipynb
     ├── handscored_behavior_analysis__figures1_5_.ipynb
     ├── ARD_linearModeling__figure5_.ipynb
@@ -32,9 +36,12 @@ AggressionObservation/
 
 We recorded simultaneous fiber photometry signals from excitatory, inhibitory and dopaminergic neural populations across a conserved neural network in mice performing, observing, or not observing aggressive social encounters. This repository provides code for:
 
-1. **Behavior classification** — extracting kinematic, postural, and social features from SLEAP pose estimates and segmenting behavior via unsupervised clustering (UMAP + watershed) and supervised classification (gradient-boosted classifier trained on BORIS annotations)
+1. **Social behavior classification** — extracting kinematic, postural, and social features from SLEAP pose estimates and segmenting behavior via unsupervised clustering (UMAP + watershed) and supervised classification (gradient-boosted classifier trained on BORIS annotations)
 
-2. **Figure generation** — statistical analyses of behavioral repertoires across experimental groups, signal processing, neural decoding, multi-region linear encoding models, and chemogenetic manipulation experiments
+2. **Observer pose classification** — superved classifier architecture and training regime for observer pose dynamics, with statistical analyses of pose for aggression observer (OBS) and non-aggressive social exposure (XPO) animals
+
+3. **Figure generation** — statistical analyses of behavioral repertoires across experimental groups, signal processing, neural decoding, multi-region linear encoding models, and chemogenetic manipulation experiments
+
 
 See the README in each subfolder for detailed documentation.
 
