@@ -51,9 +51,7 @@ See the README in each subfolder for detailed documentation.
 
 ## Data
 
-Processed data files required to run the analysis notebooks will be made available in the future.
-
-Raw video recordings and SLEAP pose estimates are available upon reasonable request.
+Processed data files required to run the analysis notebooks are available based on reasonable request.
 
 ---
 
