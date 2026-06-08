@@ -19,13 +19,15 @@ AggressionObservation/
 │   ├── unsupervised_classifier.py
 │   └── supervised_classifier.ipynb
 │
-└── observer_pose_classification/       # Frame-wise classification of observer postural dynamics
-    ├── observer_analysis_notebooks     # Figure reproduction related to observer behavior
-    └── attn_beh_classifier             # Full model pipeline
+├── observer_pose_classification/       # Frame-wise classification of observer postural dynamics
+│   ├── observer_analysis_notebooks     # Figure reproduction related to observer behavior
+│   └── attn_beh_classifier             # Full model pipeline
 │
 └── figures/                            # Statistical analyses and figure generation
     ├── unsupervised_supervised_behavior_analysis__figure1_.ipynb
     ├── handscored_behavior_analysis__figures1_5_.ipynb
+    ├── Time-shifting_PETHs_ATTN_&_Decoding_(Figures2&3)
+    ├── Similarity_Analyses_(Figure4)
     ├── ARD_linearModeling__figure5_.ipynb
     └── Gq-DREADD-unsupervised_analysis__figure5_.ipynb
 ```
