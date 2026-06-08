@@ -37,7 +37,7 @@ Characterizes the behavioral repertoire of resident aggressors, observers, and n
 ---
 
 ### `handscored_behavior_analysis__figures1_5_.ipynb`
-**Figures 1–5 (hand-scored behavior overlays)**
+**Figures 1 and 5 (hand-scored behavior overlays)**
 
 Complements the unsupervised analysis with human-annotated behavioral labels from [BORIS](https://www.boris.unito.it/). Handles two BORIS CSV export formats and supports multiple behavior categories (resident/intruder unilateral attack, mutual fighting with resistance, flee). Includes:
 
@@ -72,6 +72,18 @@ Examines how Gq-DREADD activation alters behavior cluster usage, comparing vehic
 - Transition analysis between behavior clusters under chemogenetic manipulation
 - Comparing UMAP embedding structure between vehicle and CNO sessions (embedding similarity analysis)
 - Visualization of cluster-level behavioral changes as 3×2 panel plots
+
+---
+
+### 'Similarity_Analyses_(Figure4).ipynb'
+** Figure 4 - Cosine distance analyses**
+
+Compares activity maps (vectors containing mean activity per cluster) between groups during training or the hard fight.
+Includes:
+
+- Extracting mean activity vectors
+- Application of cosine distance to compare maps between groups
+- Statistical comparisons with significance brackets, different visualization styles, and stat overlays with multiple comparisons
 
 ---
 
