@@ -48,20 +48,6 @@ Complements the unsupervised analysis with human-annotated behavioral labels fro
 
 ---
 
-### `ARD_linearModeling__figure5_.ipynb`
-**Figure 5 — Multi-region linear modeling (ARD)**
-
-Tests how well activity in one neural population can be predicted from the rest of the recorded network, using regularized regression. Includes:
-
-- Formatting multi-region trace data into per-animal, per-epoch arrays across 9 experimental time windows (days 1–9)
-- Cluster-by-cluster excitatory vs. inhibitory regression
-- Ridge regression with cross-validation for predicting single-region activity from all other regions
-- **Automatic Relevance Determination (ARD) regression** — sparse Bayesian linear regression that identifies which brain regions carry unique predictive weight for each target region
-- Mixed linear models (via `statsmodels`) for statistical testing of encoding weights across experimental conditions
-- Visualization of regression weight matrices across the 23-region network
-
----
-
 ### `Gq-DREADD-unsupervised_analysis__figure5_.ipynb`
 **Figure 5 — Gq-DREADD chemogenetic manipulation analysis**
 
@@ -86,6 +72,35 @@ Includes:
 - Statistical comparisons with significance brackets, different visualization styles, and stat overlays with multiple comparisons
 
 ---
+
+### `Time-shifting_PETHs_ATTN_&_Decoding_(Figures2&3).ipynb`
+**Figures 2 and 3 - PETH comparisons, time shifting and attack-aligned decoding**
+
+Features code wrangling attack-aligned data, time shifting and neural decoding during observation. 
+
+- Implements shift-only time warping to individual group neural activity tensors
+- Generates PETHs for EXP, OBS and each control condition following time shifting
+- Attention-based filtering of neural activity during attacks
+- Features neural decoding analyses during observation involving:
+      Resident fast action vs resident slow action attacks
+      Intruder fast action vs intruder slow action attacks
+      Toy vs live conspecific attacks
+      Familiar aggressor vs novel aggressor attacks
+- Features neural decoding analyses during hard fight, classifying attack or attacked conditions (Ext 9)
+
+---
+
+### `ARD_linearModeling__figure5_.ipynb`
+**Figure 5 — Multi-region linear modeling (ARD)**
+
+Tests how well activity in one neural population can be predicted from the rest of the recorded network, using regularized regression. Includes:
+
+- Formatting multi-region trace data into per-animal, per-epoch arrays across 9 experimental time windows (days 1–9)
+- Cluster-by-cluster excitatory vs. inhibitory regression
+- Ridge regression with cross-validation for predicting single-region activity from all other regions
+- **Automatic Relevance Determination (ARD) regression** — sparse Bayesian linear regression that identifies which brain regions carry unique predictive weight for each target region
+- Mixed linear models (via `statsmodels`) for statistical testing of encoding weights across experimental conditions
+- Visualization of regression weight matrices across the 23-region network
 
 ## Dependencies
 
