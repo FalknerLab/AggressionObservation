@@ -62,7 +62,7 @@ Examines how Gq-DREADD activation alters behavior cluster usage, comparing vehic
 ---
 
 ### `Similarity_Analyses_(Figure4).ipynb`
-** Figure 4 - Cosine distance analyses**
+**Figure 4 - Cosine distance analyses**
 
 Compares activity maps (vectors containing mean activity per cluster) between groups during training or the hard fight.
 Includes:
