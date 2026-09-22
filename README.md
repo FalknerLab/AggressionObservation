@@ -52,12 +52,7 @@ See the README in each subfolder for detailed documentation.
 
 ## Data
 
-Processed data files required to run the analysis notebooks are available on Figshare.
-10.6084/m9.figshare.33860836
-10.6084/m9.figshare.33966103
-10.6084/m9.figshare.33965395
-10.6084/m9.figshare.33965350
-10.6084/m9.figshare.33868966
+Processed data files required to run the analysis notebooks are available on Figshare. DOI: 10.6084/m9.figshare.33860836
 
 ---
 
