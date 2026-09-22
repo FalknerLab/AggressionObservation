@@ -24,12 +24,13 @@ AggressionObservation/
 │   └── attn_beh_classifier             # Full model pipeline
 │
 └── figures/                            # Statistical analyses and figure generation
-    ├── unsupervised_supervised_behavior_analysis__figure1_.ipynb
-    ├── handscored_behavior_analysis__figures1_5_.ipynb
-    ├── Time-shifting_PETHs_ATTN_&_Decoding_(Figures2&3)
-    ├── Similarity_Analyses_(Figure4)
-    ├── ARD_linearModeling__figure5_.ipynb
-    └── Gq-DREADD-unsupervised_analysis__figure5_.ipynb
+    ├── Figure1.1_HandscoredBehavior.ipynb
+    ├── Figure1.2_UnsupervisedAnalysis.ipynb
+    ├── Figure2&3_TrainingPeriodAnalysis.ipynb
+    ├── Figure4_SimilarityAnalysis.ipynb
+    ├── Figure5.1_HardFightNeuralComparisons.ipynb
+    ├── Figure5.2_ARDModeling.ipynb
+    └── Figure5.3_GqComparisons.ipynb
 ```
 
 ---
