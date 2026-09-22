@@ -2,7 +2,7 @@
 
 Analysis and figure-generation notebooks.
 
-This folder contains Jupyter notebooks that reproduce the main figures in the paper. Each notebook loads preprocessed fiber photometry traces and behavior labels (output from the `behavior_classification` pipeline) and performs statistical analyses and plotting. **This folder is under active development** — additional notebooks will be added as the manuscript is finalized.
+This folder contains Jupyter notebooks that reproduce the main figures in the paper. Each notebook loads preprocessed fiber photometry traces and behavior labels (output from the `behavior_classification` pipeline) and performs statistical analyses and plotting. 
 
 ---
 
@@ -11,7 +11,7 @@ This folder contains Jupyter notebooks that reproduce the main figures in the pa
 All notebooks load from a common multi-session data file:
 
 ```
-multifiber_data_reviews.pickle
+multifiber.pickle
 ```
 
 This contains fiber photometry traces from 23 neural populations (excitatory and inhibitory) across ~12 brain regions (PrL, vLS, POA, BNST, AH, MeA, VMH, PAG, PMv, LHb, PA, NAc), recorded simultaneously in resident aggressors, social observers, and non-social controls during resident-intruder assays. 
@@ -20,7 +20,19 @@ This contains fiber photometry traces from 23 neural populations (excitatory and
 
 ## Notebooks
 
-### `unsupervised_supervised_behavior_analysis__figure1_.ipynb`
+### `Figure1.1_HandscoredBehavior.ipynb`
+**Figures 1 (and 5) (hand-scored behavior overlays)**
+
+Computes occupancy for multiple behaviors in the hard fight, both from the recording cohort and the OBS-Gq/OBS-Ctrl cohorts. Labels are derived from [BORIS](https://www.boris.unito.it/). Handles two BORIS CSV export formats and supports multiple behavior categories (resident/intruder unilateral attack, mutual fighting with resistance, flee). Includes:
+
+- Parsing and aligning BORIS annotations to SLEAP frame indices across sessions
+- Extracting frame-level binary labels for aggression, resistance, and flight behaviors
+- Building matched feature-label datasets for statistical analysis and figure overlays
+- Cross-referencing hand-scored labels against classifier predictions
+
+---
+
+### `Figure1.2_UnsupervisedAnalysis.ipynb`
 **Figures 1 (and related)**
 
 Characterizes the behavioral repertoire of resident aggressors, observers, and non-social controls using the unsupervised clustering pipeline from `behavior_classification`. Includes:
@@ -31,49 +43,11 @@ Characterizes the behavioral repertoire of resident aggressors, observers, and n
 - Decoding experimental group identity from behavior cluster vectors (occupancy/persistence)
 - Separate decoding models for observer vs. non-observer and for observer vs. experienced animals
 - Transition analysis between behavioral clusters
-- Feature importance analysis of the embedding
-- Correlation of observer behavior clusters with resident fight outcome metrics
+- JS divergence analysis comparing behavior and transition maps between groups
 
 ---
 
-### `handscored_behavior_analysis__figures1_5_.ipynb`
-**Figures 1 and 5 (hand-scored behavior overlays)**
-
-Complements the unsupervised analysis with human-annotated behavioral labels from [BORIS](https://www.boris.unito.it/). Handles two BORIS CSV export formats and supports multiple behavior categories (resident/intruder unilateral attack, mutual fighting with resistance, flee). Includes:
-
-- Parsing and aligning BORIS annotations to SLEAP frame indices across sessions
-- Extracting frame-level binary labels for aggression, resistance, and flight behaviors
-- Building matched feature-label datasets for statistical analysis and figure overlays
-- Cross-referencing hand-scored labels against classifier predictions
-
----
-
-### `Gq-DREADD-unsupervised_analysis__figure5_.ipynb`
-**Figure 5 — Gq-DREADD chemogenetic manipulation analysis**
-
-Examines how Gq-DREADD activation alters behavior cluster usage, comparing vehicle vs. CNO conditions. Includes:
-
-- Extracting cluster occupancy, trial counts, and bout persistence for each cluster under each condition
-- Statistical comparisons with significance brackets
-- Transition analysis between behavior clusters under chemogenetic manipulation
-- Comparing UMAP embedding structure between vehicle and CNO sessions (embedding similarity analysis)
-- Visualization of cluster-level behavioral changes as 3×2 panel plots
-
----
-
-### `Similarity_Analyses_(Figure4).ipynb`
-**Figure 4 - Cosine distance analyses**
-
-Compares activity maps (vectors containing mean activity per cluster) between groups during training or the hard fight.
-Includes:
-
-- Extracting mean activity vectors
-- Application of cosine distance to compare maps between groups
-- Statistical comparisons with significance brackets, different visualization styles, and stat overlays with multiple comparisons
-
----
-
-### `Time-shifting_PETHs_ATTN_&_Decoding_(Figures2&3).ipynb`
+### `Figure2&3_TrainingPeriodAnalysis.ipynb`
 **Figures 2 and 3 - PETH comparisons, time shifting and attack-aligned decoding**
 
 Features code wrangling attack-aligned data, time shifting and neural decoding during observation. 
@@ -90,7 +64,32 @@ Features code wrangling attack-aligned data, time shifting and neural decoding d
 
 ---
 
-### `ARD_linearModeling__figure5_.ipynb`
+### `Figure4_SimilarityAnalysis.ipynb`
+**Figure 4 - Cosine distance analyses**
+
+Compares activity maps (vectors containing mean activity per cluster) between groups during training or the hard fight.
+Includes:
+
+- Extracting mean activity vectors
+- Application of cosine distance to compare maps between groups
+- Statistical comparisons with significance brackets, different visualization styles, and stat overlays with multiple comparisons
+
+---
+
+### 'Figure5.1_HardFightNeuralComparisons.ipynb'
+**Figure 5 - Mean activity comparisons and LDA modeling**
+
+Compares neural activity aligned to social behaviors (and normalized to asocial behaviors) between groups. 
+Includes:
+
+- Extracting mean activity and associated group statistics
+- LDA fitting: per-animal mean activity vectors are utilized to classify EXP vs NON; OBS activity is projected to this EXP-NON axis and compared
+- Leave-one-population-out analysis detailing how removing one population from the axis above pushes OBS animals in either EXP or NON direction
+- PCA fits of EXP, OBS and NON
+
+---
+
+### `Figure5.2_ARDModeling.ipynb`
 **Figure 5 — Multi-region linear modeling (ARD)**
 
 Tests how well activity in one neural population can be predicted from the rest of the recorded network, using regularized regression. Includes:
@@ -100,7 +99,19 @@ Tests how well activity in one neural population can be predicted from the rest 
 - Ridge regression with cross-validation for predicting single-region activity from all other regions
 - **Automatic Relevance Determination (ARD) regression** — sparse Bayesian linear regression that identifies which brain regions carry unique predictive weight for each target region
 - Mixed linear models (via `statsmodels`) for statistical testing of encoding weights across experimental conditions
-- Visualization of regression weight matrices across the 23-region network
+- Visualization of regression weight matrices across the fitted network
+
+---
+
+### `Figure5.3_GqComparisons.ipynb`
+**Figure 5 — Gq-DREADD chemogenetic manipulation analysis**
+
+Examines how Gq-DREADD activation pushes behavior into NON territory:
+
+- Extracting cluster occupancy and transition probabilities for OBS-Gq and OBS-Ctrl animals
+- JS divergence between above groups and NON (occupancy and transitions)
+
+---
 
 ## Dependencies
 
@@ -126,4 +137,3 @@ These are shared with the `behavior_classification` pipeline. No additional inst
 
 - Notebooks expect preprocessed `.parquet` feature files and behavior label dictionaries as output by `behavior_classification/`. Update path variables at the top of each notebook to point to your local data directories.
 - Statistical tests used throughout: mixed linear models, repeated-measures ANOVA, permutation tests, and cross-validated decoding. All figures are generated with `matplotlib`/`seaborn` and saved as `.svg` or `.png`.
-- This folder is **under active development**. Notebooks covering additional figures will be added prior to final publication.
