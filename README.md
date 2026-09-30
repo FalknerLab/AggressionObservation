@@ -5,7 +5,7 @@ Code repository for:
 > **Aggression experience and observation promote shared behavioral and neural changes** Jorge M. Iravedra-García, Eartha Mae Guthman, Dexter Tsin, Polina Cherepanova, Lenca Cuture, Edgar J. Ocasio-Arce, Jonathan W. Pillow Annegret L. Falkner
 > bioRxiv preprint: (https://www.biorxiv.org/content/10.1101/2024.12.26.630396v1)
 
-This repository contains the full analysis pipeline supporting the figures in the paper. It is organized into two subfolders:
+This repository contains the full analysis pipeline supporting the figures in the paper. It is organized into three subfolders:
 
 ---
 
